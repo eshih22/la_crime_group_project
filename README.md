@@ -89,8 +89,23 @@ Now we are ready to identify the areas we wish to analyse in this project:
 
 We will answer these questions using a variety of tools including Python, Javascript, Leaflet and Folium.
 
-My analysis in answering qustions 1 & 2 aims to determine whether the overall crime rate increased, decreased, or remained stable across various categories. Additionally, it seeks to identify specific crime categories most affected by the pandemic, with the goal of contributing to public awareness and understanding of how unprecedented events, like the pandemic, influence crime dynamics
- 
+
+
+### Eric -
+*My analysis in answering qustions 1 & 2 aims to determine whether the overall crime rate increased, decreased, or remained stable across various categories. Additionally, it seeks to identify specific crime categories most affected by the pandemic, with the goal of contributing to public awareness and understanding of how unprecedented events, like the pandemic, influence crime dynamics.
+
+
+### Stacie - 
+My analysis regarding spatial patterns was to determine whether there was a difference in the level of crime rate based on geography in various crime categories. Initially, I started with the entire data set and was able to see two clear areas in LA that have the highest crime rate in every category tracked. Due to the volume of data, I then broke down the data set into the top 5 crime categories. Those same two areas are still top contenders which remained consistent throughout the pandemic.
+
+
+### Michéal - 
+In analyzing this dataset with regard to upticks in crime during certain years or periods, I focused initially on crimes committed by hour, by day, by month amd by year. I then broke the dataset down further and examined month to month changes in crime, performing linear regression and  the Pearson correlation coefficiency between Month and Change in crime counts to determine any relationships between crime increases or decreases and the month of the year. Using Folium, I produced a heatmap showing top 5 crimes committed in LA County, with a dropdown menu to toggle between years.
+Leaflet and Javascript were also used to produce a map of LA County showing all 21 precincts with markers containing Total Crime information per year along with a dropdown for the user to switch and view figures on an annual basis.
+
+### Tasnia - 
+
+
 
 
 
