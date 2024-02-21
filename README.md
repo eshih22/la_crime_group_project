@@ -103,6 +103,9 @@ My analysis regarding spatial patterns was to determine whether there was a diff
 In analyzing this dataset with regard to upticks in crime during certain years or periods, I focused initially on crimes committed by hour, by day, by month amd by year. I then broke the dataset down further and examined month to month changes in crime, performing linear regression and  the Pearson correlation coefficiency between Month and Change in crime counts to determine any relationships between crime increases or decreases and the month of the year. Using Folium, I produced a heatmap showing top 5 crimes committed in LA County, with a dropdown menu to toggle between years.
 Leaflet and Javascript were also used to produce a map of LA County showing all 21 precincts with markers containing Total Crime information per year along with a dropdown for the user to switch and view figures on an annual basis.
 
+![image](https://github.com/eshih22/la_crime_group_project/assets/146681542/360e77c1-2a0f-422a-83fb-7f3c6c41c019)
+
+
 ### Tasnia - 
 
 
