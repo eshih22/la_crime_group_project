@@ -97,6 +97,7 @@ We will answer these questions using a variety of tools including Python, Javasc
 
 ### Stacie - 
 My analysis regarding spatial patterns was to determine whether there was a difference in the level of crime rate based on geography in various crime categories. Initially, I started with the entire data set and was able to see two clear areas in LA that have the highest crime rate in every category tracked. Due to the volume of data, I then broke down the data set into the top 5 crime categories. Those same two areas are still top contenders which remained consistent throughout the pandemic.
+![image](https://github.com/eshih22/la_crime_group_project/assets/146681542/5aec970b-03a9-4bb6-9726-d8d6bed73657)
 
 
 ### Michéal - 
