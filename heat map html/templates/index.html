@@ -1,0 +1,83 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crime Heatmap</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.heat/dist/leaflet-heat.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-fullscreen/dist/leaflet.fullscreen.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="https://unpkg.com/leaflet-fullscreen/dist/Leaflet.fullscreen.js"></script>
+</head>
+<body>
+    <h1>Crime Heatmap</h1>
+    <div>
+        <label for="year">Year:</label>
+        <select id="year">
+            {% for year in unique_years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+        <label for="precinct">Precinct:</label>
+        <select id="precinct">
+            {% for precinct in unique_precincts %}
+                <option value="{{ precinct }}">{{ precinct }}</option>
+            {% endfor %}
+        </select>
+        <label for="crime_description">Crime:</label>
+        <select id="crime_description">
+            {% for crime_description in unique_crime_descriptions %}
+                <option value="{{ crime_description }}">{{ crime_description }}</option>
+            {% endfor %}
+        </select>
+        <button id="update">Update Heatmap</button>
+    </div>
+    <div id="map" style="height: 500px;"></div>
+
+    <script>
+        var map = L.map('map').setView([34.052235, -118.243683], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        var yearDropdown = document.getElementById('year');
+        var precinctDropdown = document.getElementById('precinct');
+        var crimeDropdown = document.getElementById('crime_description');
+        var updateButton = document.getElementById('update');
+
+        // Heatmap layer
+        var heatmapLayer = L.heatLayer([], { radius: 20 }).addTo(map);
+
+        updateButton.addEventListener('click', function() {
+            var year = yearDropdown.value;
+            var precinct = precinctDropdown.value;
+            var crimeDescription = crimeDropdown.value;
+            
+            // Create FormData object
+            var formData = new FormData();
+            formData.append('year', year);
+            formData.append('precinct', precinct);
+            formData.append('crime_description', crimeDescription);
+
+            fetch('/update_heatmap', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Clear previous heatmap data
+                heatmapLayer.setLatLngs([]);
+                
+                // Update heatmap with new data
+                heatmapLayer.setLatLngs(data.heatmap_data);
+                
+                // Fit map bounds to the updated heatmap
+                map.fitBounds(heatmapLayer.getBounds());
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
