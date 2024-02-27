@@ -111,7 +111,7 @@ LA Crime Data Preprocessing The dataset is loaded into a Pandas DataFrame. Data 
 
 Identification of high-crime areas and hotspots. Trends and patterns of criminal activity over time. Demographic analysis of victims and perpetrators. Recommendations for law enforcement and policy-makers to address crime prevention and intervention strategies.
 
-
+## Ethical considerations
 
 Recognizing the potential for ethical concerns, our project examining Los Angeles crime data from 2020 to 2023 prioritized several efforts to ensure responsible use of the information. This included safeguarding the privacy of victims and their families by anonymizing data and minimizing the inclusion of personally identifiable information. Additionally, the project acknowledged the tension between data accuracy and privacy, striving for a balance that encouraged complete and truthful reporting while protecting individual identities. Furthermore, the project team was mindful of potential biases within the data itself, aiming to present the information in a way that minimized misinterpretations and fostered informed analysis.
 
